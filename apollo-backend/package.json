@@ -1,0 +1,54 @@
+{
+  "name": "backend-setup",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
+  "description": "## set up - Apollo Server ``` $ npm install apollo-server graphql $ npm install nodemon --save-dev // package.json \"scripts\": {     \"dev\": \"nodemon --exec node server.js\" }, ``` - babel 없이 import 사용  - node 14부터 사용가능 ``` // package.json \"type\": \"module\" ``` - babel 설정 ``` $ npm install @babel/core --save-dev $ npm install @babel/preset-env --save-dev // code update $ npm i @babel/node --save-dev // 기본적인 콘솔에서 js 실행",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "dev": "nodemon --exec ts-node src/server --delay 2s --ext ts,js",
+    "migrate": "npx prisma migrate dev --preview-feature",
+    "studio": "npx prisma studio",
+    "start": "ts-node src/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seongho-joo/apollo-backend.git"
+  },
+  "keywords": [],
+  "author": "seongho-joo <hazzyseong@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seongho-joo/apollo-backend/issues"
+  },
+  "homepage": "https://github.com/seongho-joo/apollo-backend#readme",
+  "dependencies": {
+    "@prisma/client": "^2.17.0",
+    "apollo-server": "^2.21.0",
+    "apollo-server-express": "^2.21.0",
+    "aws-sdk": "^2.871.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "graphql-tools": "^7.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/node": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@prisma/cli": "^2.17.0",
+    "nodemon": "^2.0.7",
+    "prisma": "^2.17.0",
+    "ts-node": "^9.1.1"
+  },
+  "resolutions": {
+    "fs-capacitor": "^6.2.0",
+    "graphql-upload": "^11.0.0"
+  },
+  "main": "server.js"
+}
